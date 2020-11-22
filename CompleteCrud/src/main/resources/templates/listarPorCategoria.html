@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"></meta>
+<meta http-equiv="Content-Type" content="text/html"></meta>
+<title>Workshops</title>
+</head>
+<body>
+Listar por categoria:
+<form action="#" th:action="@{/listarPorCategoria}" th:object="${categoria}" method="get">
+         
+    
+	<label for="categoria">Categoría</label>
+    <select name="${categoria}" id="categoria" th:field="*{categoria}">  
+    <option th:each="categoria:${categorias}"  th:value="${categoria.nombre}"
+     th:text="${categoria.nombre}"/>
+	</select>
+	
+     <input type="submit" value="Listar Workshop" th:value="${categoria.nombre}>
+
+</form>
+
+</body>
+</html>

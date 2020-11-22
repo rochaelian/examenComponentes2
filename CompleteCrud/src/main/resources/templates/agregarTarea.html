@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"></meta>
+<meta http-equiv="Content-Type" content="text/html"></meta>
+<title>Anthologies</title>
+</head>
+<body>
+Insertar tarea al workshop #: <span th:text="${workshop.id}">Id</span>
+<form action="#" th:action="@{/agregarTarea/{id}(id=${workshop.id})}" th:object="${tarea}" method="post">
+    
+    <label for="name">Nombre</label>
+    <input type="text" th:field="*{name}" id="name">
+    
+    <label for="descripcion">Descripción</label>
+    <input type="text" th:field="*{descripcion}" id="descripcion">
+    
+    <label for="textoLeido">Texto leído</label>
+    <input type="text" th:field="*{textoLeido}" id="textoLeido">
+    
+    
+     <input type="submit" value="Add Tarea">   
+</form>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<html>
+<head>
+</head>
+<body>
+	Workshop:<span th:text="${workshopData.name}">Titulo</span><br/>
+	Subtitulo:<span th:text="${workshopData.autor}">Autor</span><br/>
+	Objetivo:<span th:text="${workshopData.objetivo}">Objetivo</span><br/>
+    Tareas:
+    <div th:each="entry : ${workshopData.tareas}">
+    	<ul>
+    		<li><span th:text="${entry.name}">Nombre</span></li>
+    		<li><span th:text="${entry.descripcion}">Descripción</span></li>
+    		<li><span th:text="${entry.textoLeido}">Leída</span></li>
+    	</ul>
+    </div>
+    <a th:href="@{/agregarTarea/{id}(id=${workshopData.id})}">Agregar tarea</a>
+    <a href="/">Volver al index</a>
+</body>
+</html>
+

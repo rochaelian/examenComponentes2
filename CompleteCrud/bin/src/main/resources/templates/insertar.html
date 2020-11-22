@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"></meta>
+<meta http-equiv="Content-Type" content="text/html"></meta>
+<title>Workshops</title>
+</head>
+<body>
+Insertar nuevo workshop:
+<form action="#" th:action="@{/insertar}" th:object="${workshop}" method="post">
+          
+    <label for="name">Nombre del workshop</label>
+    <input type="text" th:field="*{name}" id="name" value="workshop.name"></input>
+    
+     <label for="autor">Autor</label>
+     <input type="text" th:field="*{autor}" id="autor" value="workshop.autor">
+     
+    <label for="objetivo">Objetivo</label>
+    <input type="text" th:field="*{objetivo}" id="objetivo" value="workshop.objetivo"></input>
+    
+    <label for="categoria">Categoría</label>
+    <input type="text" th:field="*{categoria}" id="categoria" value="workshop.categoria"></input>
+    
+    <label for="tiempoDuracion">Tiempo de duración</label>
+    <input type="text" th:field="*{tiempoDuracion}" id="tiempoDuracion" value="workshop.tiempoDuracion"></input>
+     
+     <input type="submit" value="Add Workshop">
+
+</form>
+
+</body>
+</html>
