@@ -1,9 +1,13 @@
 package com.cenfotec.crud.domain;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Autor {
@@ -13,6 +17,17 @@ public class Autor {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;	
 	
+	@OneToMany(fetch=FetchType.LAZY, mappedBy="autor")
+	private Set<Workshop> workshops;
+	
+	public Set<Workshop> getWorkshops() {
+		return workshops;
+	}
+
+	public void setWorkshops(Set<Workshop> workshops) {
+		this.workshops = workshops;
+	}
+
 	private String nombre;
 
 	public long getId() {

@@ -1,0 +1,16 @@
+<html>
+<head>
+</head>
+<body>
+	Categoria:<span th:text="${autorData.nombre}">Nombre</span><br/>
+    
+    Workshops:
+    <div th:each="entry : ${autorData.workshops}">
+    	<ul>
+    		<span th:text="${entry.name}">Nombre</span>:<span th:text="${entry.autor.nombre}">Autor</span>:<span th:text="${entry.objetivo}">Objetivo</span>:<span th:text="${entry.categoria.nombre}">Categoria</span>:<span th:text="${entry.tiempoDuracion}">Duración</span><br/>
+    	</ul>
+    </div>
+    <a href="/">Volver al index</a>
+</body>
+</html>
+

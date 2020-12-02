@@ -3,7 +3,7 @@
 </head>
 <body>
 	Workshop:<span th:text="${workshopData.name}">Titulo</span><br/>
-	Subtitulo:<span th:text="${workshopData.autor}">Autor</span><br/>
+	Autor:<span th:text="${workshopData.autor}">Autor</span><br/>
 	Objetivo:<span th:text="${workshopData.objetivo}">Objetivo</span><br/>
     Tareas:
     <div th:each="entry : ${workshopData.tareas}">

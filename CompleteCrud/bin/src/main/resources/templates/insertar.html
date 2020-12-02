@@ -12,15 +12,23 @@ Insertar nuevo workshop:
     <label for="name">Nombre del workshop</label>
     <input type="text" th:field="*{name}" id="name" value="workshop.name"></input>
     
-     <label for="autor">Autor</label>
-     <input type="text" th:field="*{autor}" id="autor" value="workshop.autor">
+	<label for="autor">Autor</label>
+    <select name="${autor}" id="autor" th:field="*{autor}">  
+     <option th:each="autor:${autores}"  th:value="${autor.nombre}"
+     th:text="${autor.nombre}"/>
+	</select>
      
     <label for="objetivo">Objetivo</label>
     <input type="text" th:field="*{objetivo}" id="objetivo" value="workshop.objetivo"></input>
     
-    <label for="categoria">Categoría</label>
-    <input type="text" th:field="*{categoria}" id="categoria" value="workshop.categoria"></input>
+     
     
+	<label for="categoria">Categoría</label>
+    <select name="${categoria}" id="categoria" th:field="*{categoria}">  
+    <option th:each="categoria:${categorias}"  th:value="${categoria.nombre}"
+     th:text="${categoria.nombre}"/>
+	</select>
+	
     <label for="tiempoDuracion">Tiempo de duración</label>
     <input type="text" th:field="*{tiempoDuracion}" id="tiempoDuracion" value="workshop.tiempoDuracion"></input>
      

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"></meta>
+<meta http-equiv="Content-Type" content="text/html"></meta>
+<title>Autores</title>
+</head>
+<body>
+Insertar nuevo autor:
+<form action="#" th:action="@{/insertarAutor}" th:object="${autor}" method="post">
+    
+    <label for="nombre">Nombre del autor</label>
+    <input type="text" th:field="*{nombre}" id="nombre" value="autor.nombre"></input>
+     
+     <input type="submit" value="Add Autor">
+
+</form>
+
+</body>
+</html>

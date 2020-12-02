@@ -7,14 +7,14 @@
 </head>
 <body>
 Insertar nuevo workshop:
-<form action="#" th:action="@{/insertar}" th:object="${workshop}" method="post">
+<form action="#" th:action="@{/insertar}" th:object="${workshop}"  method="post">
           
     <label for="name">Nombre del workshop</label>
     <input type="text" th:field="*{name}" id="name" value="workshop.name"></input>
     
 	<label for="autor">Autor</label>
     <select name="${autor}" id="autor" th:field="*{autor}">  
-     <option th:each="autor:${autores}"  th:value="${autor.nombre}"
+     <option th:each="autor:${autores}"  th:value="${autor.id}"
      th:text="${autor.nombre}"/>
 	</select>
      
@@ -24,8 +24,8 @@ Insertar nuevo workshop:
      
     
 	<label for="categoria">Categoría</label>
-    <select name="${categoria}" id="categoria" th:field="*{categoria}">  
-    <option th:each="categoria:${categorias}"  th:value="${categoria.nombre}"
+    <select name="${categoria}" th:field="*{categoria}">  
+    <option th:each="categoria:${categorias}"  th:value="${categoria.id}"
      th:text="${categoria.nombre}"/>
 	</select>
 	

@@ -12,7 +12,7 @@
 			<div th:each="entry : ${workshops}">
 				<li>
 					<h4>
-						<span th:text="${entry.name}">Nombre</span>:<span th:text="${entry.autor}">Autor</span>:<span th:text="${entry.objetivo}">Objetivo</span>:<span th:text="${entry.categoria}">Categoria</span>:<span th:text="${entry.tiempoDuracion}">Duración</span><br/>
+						<span th:text="${entry.name}">Nombre</span>:<span th:text="${entry.autor.nombre}">Autor</span>:<span th:text="${entry.objetivo}">Objetivo</span>:<span th:text="${entry.categoria.nombre}">Categoria</span>:<span th:text="${entry.tiempoDuracion}">Duración</span><br/>
 						<a th:href="@{/actualizar/{id}(id=${entry.id})}">Edit</a><br/>
 						<a th:href="@{/detalle/{id}(id=${entry.id})}">Ver todo el detalle</a><br/>
 					</h4>
